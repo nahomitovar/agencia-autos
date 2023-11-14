@@ -1,0 +1,14 @@
+<div class="p-fluid p-formgrid grid">
+    <div class="field col-4">
+        <label>Servicio</label>
+        <p-dropdown appendTo="body" [options]="servicio" optionLabel="folio" optionValue="idServicio" [(ngModel)]="servicioSeleccionado"></p-dropdown>
+    </div>
+    <div class="field col-4">
+        <label>Refaccion</label>
+        <p-dropdown appendTo="body" [options]="refaccion" optionLabel="nombre" optionValue="id" [(ngModel)]="refaccionSeleccionado"></p-dropdown>
+    </div>
+    <div class="field col-4 pt-5">
+        <p-button icon="pi pi-save" label="Guardar" (onClick)="GuardarRefaccionServicio()"
+        styleClass="p-button-rounded p-button-secondary"></p-button>
+    </div>
+</div>

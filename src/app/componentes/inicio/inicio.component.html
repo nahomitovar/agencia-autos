@@ -1,0 +1,14 @@
+<p-tabView>
+    <p-tabPanel header="Estatus servicio" *ngIf="usuario === '1'">
+        <app-tab-status-servicios></app-tab-status-servicios>
+    </p-tabPanel>
+    <p-tabPanel header="Dashboard" *ngIf="usuario === '3'">
+        <app-dashboard></app-dashboard>
+    </p-tabPanel>
+    <p-tabPanel header="Registrar nuevo servicio" *ngIf="usuario !== '1'">
+        <app-nuevo-servicio></app-nuevo-servicio>
+    </p-tabPanel>
+    <p-tabPanel header="Catalogos" *ngIf="usuario !== '1'">
+        <app-tab-catalogo></app-tab-catalogo>
+    </p-tabPanel>
+</p-tabView>

@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit{
 
+  usuario:any;
+
   ngOnInit(): void {
-      alert('Bienvenido de nuevo')
+      this.usuario = localStorage.getItem("Usuario")
+      console.log(this.usuario)
   }
 
 }

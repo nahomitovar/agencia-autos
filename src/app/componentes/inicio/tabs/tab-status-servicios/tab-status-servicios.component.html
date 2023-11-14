@@ -1,0 +1,45 @@
+<div style="position: fixed; bottom: 12rem; right: 5.5rem">
+    <p-speedDial [model]="items" [radius]="120" direction="up"></p-speedDial>
+</div>
+<div class="card">
+    <h1 class="card-title">Consultar estatus de mis servicios</h1>
+    <div class="p-fluid p-formgrid grid">
+        <div class="field col-3">
+            <label>Seleccione su usuario</label>
+            <p-dropdown [(ngModel)]="nombre" placeholder="Usuario" [options]="opcionesDropUsuarios" optionLabel="nombre" optionValue="id"></p-dropdown>
+        </div>
+        <div class="field col-3">
+            <label>Ingrese su número de telefono</label>
+            <input [(ngModel)]="telefono" pInputText type="text"/>
+        </div>
+        <div class="field col-3">
+            <label>Ingrese su contraseña</label>
+            <input [(ngModel)]="pass" pInputText type="password"/>
+        </div>
+        <div class="field col-3 pt-5">
+            <p-button icon="pi pi-search" label="Consultar" styleClass="p-button-rounded p-button-secondary" (onClick)="ConsultarServicios()"></p-button>
+        </div>
+        <div class="field col-9" *ngIf="serviciosDisponibles">
+            <p-table [value]="servicios" styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Folio</th>
+                        <th>Estatus</th>
+                        <th>Ingreso al taller</th>
+                        <th>Salida del taller</th>
+                        <th>Próximo servicio</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-product>
+                    <tr>
+                        <td>{{ product.folio }}</td>
+                        <td>{{ product.estatus }}</td>
+                        <td>{{ product.ingreso | date:"yyyy-MM-dd" }}</td>
+                        <td>{{ (product.salida | date:"yyyy-MM-dd") ?? 'Aun en el taller' }}</td>
+                        <td>{{ product.proximo | date:"yyyy-MM-dd" }}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>

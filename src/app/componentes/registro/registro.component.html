@@ -1,0 +1,22 @@
+<div class="p-fluid p-formgrid grid">
+    <div class="field col-3">
+        <label>Ingrese su nombre</label>
+        <input [(ngModel)]="nombre" pInputText type="text"/>
+    </div>
+    <div class="field col-3">
+        <label>Ingrese su número de telefono</label>
+        <input [(ngModel)]="telefono" pInputText type="phone">
+    </div>
+    <div class="field col-3">
+        <label>Ingrese su contraseña</label>
+        <input [(ngModel)]="pass" pInputText type="password">
+    </div>
+    <div class="field col-3">
+        <label>Seleccione rol</label>
+        <p-dropdown [(ngModel)]="rol" [options]="roles" optionLabel="nombre" optionValue="valor"></p-dropdown>
+    </div>
+    <div class="field col-12">
+        <p-button icon="pi pi-save" label="Registrarme" (onClick)="registro()"
+        styleClass="p-button-rounded p-button-success"></p-button>
+    </div>
+</div>

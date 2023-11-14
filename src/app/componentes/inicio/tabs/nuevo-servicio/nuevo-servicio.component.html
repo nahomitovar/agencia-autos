@@ -1,0 +1,20 @@
+<div style="position: fixed; bottom: 12rem; right: 5.5rem">
+    <p-speedDial [model]="items" [radius]="120" direction="up"></p-speedDial>
+</div>
+<p-card header="Registrar nuevo servicio">
+    <div class="p-fluid p-formgrid grid">
+        <div class="field col-4">
+            <label>Automovil</label>
+            <p-dropdown [options]="automovil" optionValue="id" placeholder="Automovil"
+            optionLabel="marca" [(ngModel)]="automovilSeleccionado"></p-dropdown>
+        </div>
+        <div class="field col-4">
+            <label>Usuario</label>
+            <p-dropdown [(ngModel)]="usuarioSeleccionado" placeholder="Usuario" [options]="usuario" optionLabel="nombre" optionValue="id"></p-dropdown>
+        </div>
+        <div class="field col-4 pt-5">
+            <p-button icon="pi pi-save" label="Guardar registro" (onClick)="registrarNuevoServicio()"
+            styleClass="p-button-rounded p-button-success"></p-button>
+        </div>
+    </div>
+</p-card>
